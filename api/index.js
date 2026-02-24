@@ -17,6 +17,7 @@ const cors = require('cors');
 app.use(cors({
     origin: [
         "http://localhost:5173",
+        "https://code-arena-frontend-rho.vercel.app/",
         process.env.FRONTEND_URL
     ],
     credentials: true
