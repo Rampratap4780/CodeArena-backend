@@ -14,14 +14,15 @@ const videoRouter = require("../src/routes/videoCreator");
 const cors = require('cors');
 
 // ✅ CORS (local + production)
+// Backend ki index.js file mein
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://code-arena-frontend-rho.vercel.app/"
+        "https://code-arena-frontend-rho.vercel.app", // 🚨 Naya Frontend Link (bina slash ke)
+        process.env.FRONTEND_URL // Agar aapne Vercel ENV mein daala hai toh backup ke liye
     ],
-    credentials: true
+    credentials: true 
 }));
-
 app.use(express.json());
 app.use(cookieParser());
 
